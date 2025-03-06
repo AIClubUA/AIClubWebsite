@@ -5,8 +5,8 @@ export default function Events() {
         <p className="mt-4">Stay tuned for exciting AI workshops, hackathons, and guest lectures.</p>
         
         {[
-          { title: "Kickoff Meeting", date: "Thursday, February 27th", time: "5:00 - 6:00 PM", desc: "Join us for our first meeting of the semester to discuss upcoming events and opportunities!", link: "/events/kickoff" },
-          { title: "Machine Learning Basics", date: "Thursday, March 6th", time: "5:00 - 6:00 PM", desc: "An introduction to machine learning concepts and techniques.", link: "/events/ml-basics" },
+          { title: "Kickoff Meeting", date: "Thursday, February 27th", time: "5:00 - 6:00 PM", desc: "Join us for our first meeting of the semester to discuss upcoming events and opportunities and hear from AI Professionals!", link: "/events/kickoff" },
+          { title: "Machine Learning Basics", date: "Thursday, March 6th", time: "5:00 - 6:00 PM", desc: "An introduction to the basics of machine learning.", link: "/events/ml-basics" },
           { title: "Neural Networks Deep Dive", date: "Thursday, March 13th", time: "5:00 - 6:00 PM", desc: "A deeper look into how neural networks function and are trained.", link: "/events/neural-networks" },
           { title: "AI Ethics and Bias", date: "Thursday, March 20th", time: "5:00 - 6:00 PM", desc: "A discussion on ethical considerations and bias in AI models.", link: "/events/ai-ethics" }
         ].map((event, index) => (
@@ -21,7 +21,9 @@ export default function Events() {
             <p className="mt-2">{event.desc}</p>
           </a>
         ))}
+        <div className="mt-8">
+          <p className="text-sm text-gray-500">For more information, contact us at <a href="mailto:info@example.com">info@example.com</a></p>
+        </div>
       </div>
     );
   }
-  
