@@ -4,9 +4,12 @@ import Sidebar from '@/components/SidebarComp';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="flex">
+    <div className="flex h-screen">
+      {/* Sidebar */}
       <Sidebar />
-      <div className="ml-64 w-full">
+
+      {/* Main Content */}
+      <div className="flex-1">
         <Component {...pageProps} />
       </div>
     </div>
