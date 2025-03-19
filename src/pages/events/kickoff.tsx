@@ -14,7 +14,7 @@ export default function TutorialPage() {
             <pre className="bg-gray-100 p-4 rounded mb-6"><code>pip install openai openpyxl</code></pre>
             
             <h2 className="text-2xl font-semibold mb-4">Step 1: Set Up Your Excel File</h2>
-            <p className="mb-4">Create an Excel file <code>questions.xlsx</code> with a sheet named "Questions" structured like this:</p>
+            <p className="mb-4">Create an Excel file <code>questions.xlsx</code> with a sheet named &quot;Questions&quot; structured like this:</p>
             <table className="table-auto border-collapse border border-gray-300 mb-6 w-full">
                 <thead>
                     <tr>

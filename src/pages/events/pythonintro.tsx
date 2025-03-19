@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const PythonIntro: React.FC = () => {
     const [showTutorial, setShowTutorial] = useState(false);
@@ -13,12 +14,12 @@ const PythonIntro: React.FC = () => {
             </section>
             
             <section className="mb-6">
-                <h2 className="text-2xl font-semibold mb-4">Newcomers' Learning Experience</h2>
+                <h2 className="text-2xl font-semibold mb-4">Newcomers&apos; Learning Experience</h2>
                 <p className="mb-4">The newcomers learned basic Python programming.</p>
             </section>
             
             <section className="mb-6">
-                <h2 className="text-2xl font-semibold mb-4">Experienced Members' Discussion</h2>
+                <h2 className="text-2xl font-semibold mb-4">Experienced Members&apos; Discussion</h2>
                 <p className="mb-4">The more experienced members broke out into teams to discuss long-term projects that involve AI in various fields.</p>
             </section>
             
@@ -34,7 +35,7 @@ const PythonIntro: React.FC = () => {
 
             {!showTutorial && (
     <div className="text-center mt-4">
-        <img 
+        <Image
             src="/eventimages/pythonlogo.png" 
             alt="Python Intro" 
             className="cursor-pointer w-1/5 mx-auto"
@@ -71,40 +72,40 @@ const Tutorial: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                 </ul>
                 <h3 className="text-xl font-semibold mb-2">Printing to the Console</h3>
                 <p className="mb-4">You can print text to the console using the <code>print</code> function:</p>
-                <pre className="bg-gray-100 p-4 rounded mb-6"><code>print("Hello, AI Club!")</code></pre>
+                <pre className="bg-gray-100 p-4 rounded mb-6"><code>print(&quote;Hello, AI Club!&quote;)</code></pre>
                 <p className="mb-4">Output:</p>
                 <pre className="bg-gray-100 p-4 rounded mb-6"><code>Hello, AI Club!</code></pre>
                 
                 <h3 className="text-xl font-semibold mb-2">Defining Functions</h3>
-                <p className="mb-4">Functions allow you to encapsulate code for reuse. Here's an example of a basic function:</p>
+                <p className="mb-4">Functions allow you to encapsulate code for reuse. Here&apos;s an example of a basic function:</p>
                 <pre className="bg-gray-100 p-4 rounded mb-6"><code>{`def greet(name):\n    print(f"Hello, {name}!")\n\ngreet("AI Club")`}</code></pre>
                 <p className="mb-4">Output:</p>
                 <pre className="bg-gray-100 p-4 rounded mb-6"><code>Hello, AI Club!</code></pre>
 
                 <h3 className="text-xl font-semibold mb-2">Variables</h3>
-                <p className="mb-4">Variables store data values. Here's how you can define and use variables:</p>
+                <p className="mb-4">Variables store data values. Here&apos;s how you can define and use variables:</p>
                 <pre className="bg-gray-100 p-4 rounded mb-6"><code>{`name = "AI Club"\nprint(name)`}</code></pre>
                 <p className="mb-4">Output:</p>
                 <pre className="bg-gray-100 p-4 rounded mb-6"><code>AI Club</code></pre>
 
                 <h3 className="text-xl font-semibold mb-2">Loops</h3>
-                <p className="mb-4">Loops allow you to execute a block of code multiple times. Here's an example of a for loop:</p>
+                <p className="mb-4">Loops allow you to execute a block of code multiple times. Here&apos;s an example of a for loop:</p>
                 <pre className="bg-gray-100 p-4 rounded mb-6"><code>{`for i in range(5):\n    print(i)`}</code></pre>
                 <p className="mb-4">Output:</p>
                 <pre className="bg-gray-100 p-4 rounded mb-6"><code>{`0\n1\n2\n3\n4`}</code></pre>
 
 <h3 className="text-xl font-semibold mb-2">Conditionals</h3>
-<p className="mb-4">Conditionals allow you to execute code based on certain conditions. Here's an example:</p>
+<p className="mb-4">Conditionals allow you to execute code based on certain conditions. Here&apos;s an example:</p>
 <pre className="bg-gray-100 p-4 rounded mb-6"><code>{`x = 10\nif x > 5:\n    print("x is greater than 5")\nelse:\n    print("x is 5 or less")`}</code></pre>
 <p className="mb-4">Output:</p>
 <pre className="bg-gray-100 p-4 rounded mb-6"><code>x is greater than 5</code></pre>
 
 <h3 className="text-xl font-semibold mb-2">Lists</h3>
-<p className="mb-4">Lists store multiple items in a single variable. Here's how you can define and use lists:</p>
+<p className="mb-4">Lists store multiple items in a single variable. Here&apos;s how you can define and use lists:</p>
 <pre className="bg-gray-100 p-4 rounded mb-6"><code>{`fruits = ["apple", "banana", "cherry"]\nfor fruit in fruits:\n    print(fruit)`}</code></pre>
 <p className="mb-4">Output:</p>
 <pre className="bg-gray-100 p-4 rounded mb-6"><code>{`apple\nbanana\ncherry`}</code></pre>
-<p className="mb-4">Now it's your turn, try to build something yourself.</p>
+<p className="mb-4">Now it&apos;s your turn, try to build something yourself.</p>
 </section>
 </div>
 );
