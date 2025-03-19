@@ -19,7 +19,7 @@ const resources = [
 export default function Resources() {
     return (
         <div className="min-h-screen bg-gray-100 p-8">
-            <h1 className="text-4xl font-bold text-center mb-8">Resources</h1>
+            <h1 className="text-4xl font-bold text-center text-crimson mb-8">Resources</h1>
             <ul className="list-disc list-inside">
                 {resources.map((resource, index) => (
                     <li key={index} className="mb-4">

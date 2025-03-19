@@ -1,1 +1,36 @@
+# Node modules
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+pnpm-error.log*
+
+# Environment variables
+.env*
+!.env.example
+
+# Next.js build output
+.next/
+out/
+
+# Next.js cache
+.next/cache
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
+# Local files
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+*.iml
