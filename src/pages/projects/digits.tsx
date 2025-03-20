@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
 import * as tf from '@tensorflow/tfjs';
-import { data } from 'autoprefixer';
 
 export default function TrainingCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
