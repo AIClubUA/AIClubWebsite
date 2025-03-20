@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import * as tf from '@tensorflow/tfjs';
+import { data } from 'autoprefixer';
 
 export default function TrainingCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -100,12 +101,12 @@ export default function TrainingCanvas() {
     model.compile({ optimizer: 'adam', loss: 'sparseCategoricalCrossentropy', metrics: ['accuracy'] });
 
     modelRef.current = model;
-
     const xs = tf.tensor2d(trainingData.map(d => d.pixels), [trainingData.length, 1024], 'float32');
     const ys = tf.tensor1d(trainingData.map(d => d.number), 'float32');
 
     await model.fit(xs, ys, { epochs: 10 });
     console.log("Training complete");
+    console.log("Model summary:", model.summary());
     setIsTraining(false);
   };
 
@@ -155,6 +156,7 @@ export default function TrainingCanvas() {
       {isTraining == true && <button onClick={trainModel} className="mt-4 p-2 bg-black text-white rounded">Currently Training</button>}
       {isTraining == false && <button onClick={testModel} className="mt-4 p-2 bg-blue-500 text-white rounded">Test Model</button>}
       {isTraining == true && <button className="mt-4 p-2 bg-red-500 text-white rounded">Test Model</button>}
+      <h1 className="text-1xl font-bold text-black mt-4">Dataset Size: {trainingData.length}</h1>
     </div>
   );
 }
