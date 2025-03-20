@@ -7,9 +7,9 @@ const projects = [
         link: '/projects/ai-research',
     },
     {
-        title: 'Machine Learning Model',
+        title: 'Handwritten Digits Recognition',
         description: 'Developing a machine learning model for data analysis.',
-        link: '/projects/ml-model',
+        link: '/projects/digits',
     },
     {
         title: 'NLP Application',
