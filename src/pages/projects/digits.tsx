@@ -25,6 +25,14 @@ export default function TrainingCanvas() {
     localStorage.setItem("trainingData", JSON.stringify(trainingData));
   }, [trainingData]);
 
+  useEffect(() => {
+    const preventDefault = (e: TouchEvent) => e.preventDefault();
+    document.addEventListener('touchmove', preventDefault, { passive: false });
+    return () => {
+      document.removeEventListener('touchmove', preventDefault);
+    };
+  }, []);
+
   const startDrawing = (event: React.MouseEvent | React.TouchEvent) => {
     setDrawing(true);
     draw(event);
