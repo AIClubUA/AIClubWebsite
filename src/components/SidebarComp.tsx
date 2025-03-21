@@ -12,7 +12,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
     <>
       {/* Mobile Menu Button */}
       <button
-        className="sm:hidden p-2 text-white bg-crimson fixed top-4 left-4 z-50 rounded-full shadow-lg"
+        className="sm:hidden p-2 text-white bg-crimson fixed top-4 left-4 z-[999] rounded-full shadow-lg"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
       >
@@ -21,10 +21,10 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
 
       {/* Sidebar Component */}
       <aside
-        className={`fixed top-0 left-0 h-screen w-64 sm:w-72 bg-gradient-to-b from-black to-crimson text-white flex flex-col items-center px-6 pt-8 pb-12 transition-transform duration-300 ease-in-out
-        ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } sm:translate-x-0 z-40 shadow-lg`}
+        className={`fixed top-0 left-0 h-screen w-64 bg-gradient-to-b from-black to-crimson text-white flex flex-col items-center px-6 pt-8 pb-12 transition-transform duration-300 ease-in-out
+      ${
+        isOpen ? "translate-x-0" : "-translate-x-full"
+      } sm:translate-x-0 z-40 shadow-lg`}
       >
         {/* Logo & Title */}
         <div className="flex items-center justify-center space-x-2 mb-12 mt-20 sm:mt-4">
