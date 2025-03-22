@@ -21,25 +21,24 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
 
       {/* Sidebar Component */}
       <aside
-        className={`fixed top-0 left-0 h-screen w-64 bg-gradient-to-b from-black to-crimson text-white flex flex-col items-center px-6 pt-8 pb-12 transition-transform duration-300 ease-in-out
+        className={`fixed top-0 left-0 h-screen w-64 bg-gradient-to-b from-black to-crimson text-white flex flex-col items-center px-2 pt-8 pb-12 transition-transform duration-300 ease-in-out
       ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       } sm:translate-x-0 z-40 shadow-lg`}
       >
         {/* Logo & Title */}
-        <div className="flex items-center justify-center space-x-2 mb-12 mt-20 sm:mt-4">
+        <div className="flex items-center justify-center mb-12 mt-20 sm:mt-4">
           <span className="text-2xl sm:text-3xl font-semibold tracking-wide">
             UA
           </span>
           <Image
-            src="/a-icon.png"
+            src="/Ai.png"
             alt="AI"
-            width={50}
-            height={50}
-            className="object-contain"
+            width={80}
+            height={80}
+            className=""
           />
-          <span className="text-crimson text-3xl sm:text-4xl font-bold">I</span>
-          <span className="text-2xl sm:text-3xl font-semibold tracking-wide">
+          <span className="text-2xl sm:text-3xl font-semibold">
             Club
           </span>
         </div>
