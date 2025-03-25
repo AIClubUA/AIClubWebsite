@@ -125,11 +125,15 @@ export default function TrainingCanvas() {
 
     const model = tf.sequential();
     model.add(
-      tf.layers.dense({ inputShape: [1024], units: 128, activation: "relu" })
+      tf.layers.dense({ inputShape: [1024], units: 256, activation: "relu" })
     );
+    model.add(tf.layers.dropout({ rate: 0.5 }));
+    model.add(tf.layers.dense({ units: 128, activation: "relu" }));
+    model.add(tf.layers.dropout({ rate: 0.5 }));
+    model.add(tf.layers.dense({ units: 64, activation: "relu" }));
     model.add(tf.layers.dense({ units: 10, activation: "softmax" }));
     model.compile({
-      optimizer: "adam",
+      optimizer: tf.train.adam(0.001),
       loss: "sparseCategoricalCrossentropy",
       metrics: ["accuracy"],
     });
