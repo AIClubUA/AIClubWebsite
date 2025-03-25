@@ -44,7 +44,7 @@ export type EventType = {
       date: "2025-03-06",
       description: "Join us in Northeast Medical Center for a Introductory workshop on Python and AI!",
       image: "/AI_hero.jpeg",
-      link: "#"
+      link: "pythonintro.tsx"
     },
     {
       title: "Kickoff meeting",
