@@ -51,7 +51,7 @@ export type EventType = {
       date: "2025-02-27",
       description: "Join us for our first meeting of the semester to discuss upcoming events and opportunities and hear from AI Professionals!",
       image: "/AI_hero.jpeg",
-      link: "#"
+      link: "tutorialPage"
     },
     
       

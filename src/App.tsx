@@ -6,10 +6,10 @@ import AllEventsPage from "./pages/AllEventsPage";
 import AboutPage from "./pages/AboutPage";
 import TeamPage from "./pages/TeamPage";
 import Footer from "./components/footer";
+import TutorialPage from "./pages/kickoff";
 
 function App() {
   const location = useLocation();
-
   return (
     <>
       <Header />
@@ -20,6 +20,7 @@ function App() {
             <Route path="/events" element={<AllEventsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/team" element={<TeamPage />} />
+            <Route path="/tutorialPage" element={<TutorialPage />} />
           </Routes>
         </AnimatePresence>
       </main>
