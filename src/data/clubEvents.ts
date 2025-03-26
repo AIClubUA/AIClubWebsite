@@ -43,7 +43,7 @@ export type EventType = {
       title: "Python and AI Intro",
       date: "2025-03-06",
       description: "Join us in Northeast Medical Center for a Introductory workshop on Python and AI!",
-      image: "/AI_hero.jpeg",
+      image: "/codingSession.webp",
       link: "pythonintro.tsx"
     },
     {
@@ -54,8 +54,7 @@ export type EventType = {
       link: "tutorialPage"
     },
     
-      
-      
-    // Add more if you want to test the "See all" button
+
+    // Add more
   ];
   

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Hero from "../components/heroSection";
 import Events from "../components/clubEvents";
 import { useScrollToTop } from "../hooks/scrollTop";
-import Gallery from "../components/imageCarousel";
+import Gallery from "../components/ImageGallery";
 
 const HomePage = () => {
   useScrollToTop();

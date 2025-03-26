@@ -47,9 +47,9 @@ const Header = () => {
               Events
             </button>
 
-            <a href="#projects" className="hover:text-blue-600 transition">
+            <Link to="/projects" className="hover:text-blue-600 transition">
               Projects
-            </a>
+            </Link>
             <Link to="/team" className="hover:text-blue-600 transition">
               Team
             </Link>

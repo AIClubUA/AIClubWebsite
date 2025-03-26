@@ -24,7 +24,10 @@ const Footer = () => {
               About
             </Link>
             <Link to="/events" className="hover:text-[#990000] transition">
-              Events
+              All Events
+            </Link>
+            <Link to="/projects" className="hover:text-[#990000] transition">
+              Projects
             </Link>
             <Link to="/team" className="hover:text-[#990000] transition">
               Team
@@ -39,6 +42,12 @@ const Footer = () => {
               className="hover:text-[#990000] transition"
             >
               sdhanegan@crimson.ua.edu
+            </a>
+            <a
+              href="mailto:fjgutierez@ua.edu"
+              className="hover:text-[#990000] transition"
+            >
+              fjgutierez@ua.edu
             </a>
             <p>University of Alabama, Tuscaloosa, AL</p>
           </div>

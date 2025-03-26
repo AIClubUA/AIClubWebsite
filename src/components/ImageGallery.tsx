@@ -1,76 +1,85 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { galleryImages as allImages } from "../data/galleryImages";
+import { useState } from "react";
+import { galleryImages } from "../data/galleryImages";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 
-type ImageItem = {
-  src: string;
-  webpSrc?: string;
-  alt: string;
-};
-
-type ImageGalleryProps = {
-  limit?: number;
-  shuffle?: boolean;
-  title?: string;
-};
-
-const ImageGallery = ({ limit, shuffle = false, title }: ImageGalleryProps) => {
-  const [images, setImages] = useState<ImageItem[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate fetching images
-    const fetchImages = () => {
-      let imgs = [...allImages];
-      if (shuffle) imgs = imgs.sort(() => Math.random() - 0.5);
-      if (limit) imgs = imgs.slice(0, limit);
-      setImages(imgs);
-      setLoading(false);
-    };
-
-    const timeout = setTimeout(fetchImages, 500); // Simulated delay
-    return () => clearTimeout(timeout);
-  }, [limit, shuffle]);
+const ImageGallery = () => {
+  const [selectedImage, setSelectedImage] = useState<
+    null | (typeof galleryImages)[0]
+  >(null);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      {title && (
-        <h2 className="text-3xl font-bold text-center mb-10 text-[#990000]">
-          {title}
+    <div className="bg-white py-16 px-4">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-center text-[#990000] mb-10">
+          Club Moments
         </h2>
-      )}
 
-      {loading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-pulse">
-          {Array.from({ length: limit || 6 }).map((_, i) => (
-            <div key={i} className="h-64 bg-gray-200 rounded-2xl shadow-md" />
-          ))}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((img, idx) => (
+        {/* Masonry grid layout */}
+        <div className="columns-1 sm:columns-2 md:columns-3 gap-2 space-y-2">
+          {galleryImages.map((img, index) => (
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 bg-white"
+              key={index}
+              whileHover={{ scale: 1.01 }}
+              className="overflow-hidden break-inside-avoid cursor-pointer rounded-xl shadow"
+              onClick={() => setSelectedImage(img)}
             >
-              <picture>
-                {img.webpSrc && (
-                  <source srcSet={img.webpSrc} type="image/webp" />
-                )}
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </picture>
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full object-cover transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+              />
             </motion.div>
           ))}
         </div>
-      )}
+      </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative max-w-4xl w-[90%] rounded-xl overflow-hidden shadow-lg"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {selectedImage.webpSrc ? (
+                <picture>
+                  <source srcSet={selectedImage.webpSrc} type="image/webp" />
+                  <img
+                    src={selectedImage.src}
+                    alt={selectedImage.alt}
+                    className="w-full h-auto max-h-[80vh] object-contain bg-white"
+                  />
+                </picture>
+              ) : (
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="w-full h-auto max-h-[80vh] object-contain bg-white"
+                />
+              )}
+
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-2 right-2 bg-white p-1.5 rounded-full shadow hover:bg-gray-200 transition"
+              >
+                <X className="w-5 h-5 text-gray-700" />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

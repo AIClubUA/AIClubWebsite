@@ -79,5 +79,14 @@ export type TeamMember = {
         bio: "",
         email: "fjgutierrez@ua.edu",
       },
+      {
+        name: "Landon Eskridge",
+        position: "Graduate Advisor",
+        major: "Chemical Engineering",
+        hometown: "Wichita, KS",
+        image: "./team/landon.webp",
+        bio: "Motivated chemical engineer and MBA student with hands-on field experience and a keen interest in AI. Skilled in organization, event coordination, and public relations, driven to build a connected AI community and explore the technology's transformative potential.",
+        email: "fjgutierrez@ua.edu",
+      },
   ];
   
