@@ -37,6 +37,15 @@ export type TeamMember = {
       email: "jrgarcia3@crimson.ua.edu",
     },
     {
+      name: "Benjamin Washburn",
+      position: "Investor Relations",
+      major: "",
+      hometown: "",
+      image: "./team/benjamin.webp",
+      bio: "",
+      email: "bcwashburn1@crimson.ua.edu",
+    },
+    {
       name: "Michal Zajac",
       position: "Graduate Advisor",
       major: "Computer Science",
@@ -72,7 +81,7 @@ export type TeamMember = {
     },
     {
         name: "Fabricio Gutierrez",
-        position: "Web Developer",
+        position: "Software Developer",
         major: "Software Engineering",
         hometown: "Lima, Perú",
         image: "./team/fabricio.webp",
@@ -86,7 +95,7 @@ export type TeamMember = {
         hometown: "Wichita, KS",
         image: "./team/landon.webp",
         bio: "Motivated chemical engineer and MBA student with hands-on field experience and a keen interest in AI. Skilled in organization, event coordination, and public relations, driven to build a connected AI community and explore the technology's transformative potential.",
-        email: "fjgutierrez@ua.edu",
+        email: "lreskridge@crimson.ua.edu",
       },
   ];
   

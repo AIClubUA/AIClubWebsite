@@ -6,10 +6,15 @@ import { useScrollToTop } from "../hooks/scrollTop";
 
 // Agrupar miembros por tipo de rol
 const groupMap: Record<string, string[]> = {
-  "Executive Team": ["President", "Vice President", "Executive Coordinator"],
+  "Executive Team": [
+    "President",
+    "Vice President",
+    "Executive Coordinator",
+    "Investor Relations",
+  ],
   "Graduate Advisors": ["Graduate Advisor"],
   "Faculty Advisor": ["Faculty Advisor"],
-  Developers: ["Executive Developer", "Web Developer"],
+  Developers: ["Executive Developer", "Software Developer"],
 };
 
 // Agrupar automáticamente según `groupMap`
