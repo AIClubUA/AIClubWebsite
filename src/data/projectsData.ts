@@ -7,7 +7,7 @@ export const projects = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet dui ultricies dolor malesuada accumsan.",
       technologies: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
       image: "/AI_hero.jpeg",
-      link: "/projects/heart-attack-ai"
+      link: "/projects/digits"
     },
     {
       title: "AI Club Website",
