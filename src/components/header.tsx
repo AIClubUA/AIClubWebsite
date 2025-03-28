@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,11 +11,11 @@ const Header = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const goToEventsSection = () => {
-    if (location.pathname === "/") {
-      const el = document.getElementById("events");
-      el?.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname === '/') {
+      const el = document.getElementById('events');
+      el?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      navigate("/", { state: { scrollTarget: "events" } });
+      navigate('/', { state: { scrollTarget: 'events' } });
     }
     setIsOpen(false);
   };
@@ -26,11 +26,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo + Club Name */}
           <a href="/" className="flex items-center space-x-3">
-            <img
-              src="/web-app-manifest-192x192.png"
-              alt="Club Logo"
-              className="h-10 w-10 object-contain"
-            />
+            <img src="/web-app-manifest-192x192.png" alt="Club Logo" className="h-10 w-10 object-contain" />
             <span className="text-xl font-bold text-gray-800">AI Club</span>
           </a>
 
@@ -40,10 +36,7 @@ const Header = () => {
               About
             </Link>
 
-            <button
-              onClick={goToEventsSection}
-              className="hover:text-blue-600 transition"
-            >
+            <button onClick={goToEventsSection} className="hover:text-blue-600 transition cursor-pointer">
               Events
             </button>
 
@@ -61,11 +54,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button onClick={toggleMenu} aria-label="Toggle Menu">
-              {isOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -77,9 +66,9 @@ const Header = () => {
           <motion.nav
             key="mobile-menu"
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
+            animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
             className="md:hidden overflow-hidden bg-white/80 backdrop-blur-md shadow-md w-full text-gray-700 font-medium"
           >
             <div className="flex flex-col items-center space-y-3 px-4 py-4">
@@ -87,10 +76,7 @@ const Header = () => {
                 About
               </Link>
 
-              <button
-                onClick={goToEventsSection}
-                className="hover:text-blue-600 transition"
-              >
+              <button onClick={goToEventsSection} className="hover:text-blue-600 transition">
                 Events
               </button>
 
