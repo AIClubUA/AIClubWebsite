@@ -36,7 +36,7 @@ const Header = () => {
               About
             </Link>
 
-            <button onClick={goToEventsSection} className="hover:text-blue-600 transition cursor-pointer">
+            <button type="button" onClick={goToEventsSection} className="hover:text-blue-600 transition cursor-pointer">
               Events
             </button>
 
@@ -53,7 +53,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} aria-label="Toggle Menu">
+            <button type="button" onClick={toggleMenu} aria-label="Toggle Menu">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -76,7 +76,7 @@ const Header = () => {
                 About
               </Link>
 
-              <button onClick={goToEventsSection} className="hover:text-blue-600 transition">
+              <button type="button" onClick={goToEventsSection} className="hover:text-blue-600 transition">
                 Events
               </button>
 

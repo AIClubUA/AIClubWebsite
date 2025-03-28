@@ -51,8 +51,8 @@ const AboutPage = () => {
           <div className="bg-gray-100 p-6 rounded-xl shadow-md">
             <h2 className="text-2xl font-semibold text-[#990000] mb-4">What We Do</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              {aboutPageData.whatWeDo.map((item, i) => (
-                <li key={i}>{item}</li>
+              {aboutPageData.whatWeDo.map((item) => (
+                <li key={item.slice(10).trim()}>{item}</li>
               ))}
             </ul>
           </div>
@@ -61,8 +61,8 @@ const AboutPage = () => {
           <div className="bg-gray-100 p-6 rounded-xl shadow-md">
             <h2 className="text-2xl font-semibold text-[#990000] mb-4">Why Join?</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              {aboutPageData.whyJoin.map((item, i) => (
-                <li key={i}>{item}</li>
+              {aboutPageData.whyJoin.map((item) => (
+                <li key={item.slice(10).trim()}>{item}</li>
               ))}
             </ul>
           </div>

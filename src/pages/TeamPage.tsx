@@ -79,6 +79,7 @@ const TeamPage = () => {
             <div key={group}>
               {/* Group Header */}
               <button
+                type="button"
                 onClick={() =>
                   setExpanded((prev) => ({
                     ...prev,
@@ -103,7 +104,7 @@ const TeamPage = () => {
                   >
                     {members.map((member, index) => (
                       <motion.div
-                        key={index}
+                        key={member.name.trim()}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -124,6 +125,7 @@ const TeamPage = () => {
                         {member.hometown && <p className="text-sm text-gray-600 mb-1">Hometown: {member.hometown}</p>}
                         <p className="text-sm text-gray-700 mt-2 mb-3">{member.bio}</p>
                         <button
+                          type="button"
                           onClick={() => handleCopyEmail(member.email)}
                           className="text-sm text-blue-600 hover:underline cursor-pointer bg-transparent border-none p-0 z-10"
                         >

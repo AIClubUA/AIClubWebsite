@@ -40,7 +40,7 @@ const ProjectsPage = () => {
       <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <motion.div
-            key={index}
+            key={project.title.trim()}
             className="bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,8 +51,8 @@ const ProjectsPage = () => {
               <h3 className="text-2xl font-semibold text-[#990000] mb-2">{project.title}</h3>
               <p className="text-gray-700 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map((tech, i) => (
-                  <span key={i} className="text-xs bg-[#990000]/10 text-[#990000] px-2 py-1 rounded-full">
+                {project.technologies.map((tech) => (
+                  <span key={tech} className="text-xs bg-[#990000]/10 text-[#990000] px-2 py-1 rounded-full">
                     {tech}
                   </span>
                 ))}

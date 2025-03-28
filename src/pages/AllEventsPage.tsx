@@ -65,6 +65,7 @@ const AllEventsPage = () => {
         </h1>
         <div className="flex justify-center gap-4 mt-6">
           <button
+            type="button"
             onClick={() => setFilter('upcoming')}
             className={`px-4 py-2 rounded-lg transition font-medium ${
               filter === 'upcoming' ? 'bg-[#990000] text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -73,6 +74,7 @@ const AllEventsPage = () => {
             Upcoming
           </button>
           <button
+            type="button"
             onClick={() => setFilter('past')}
             className={`px-4 py-2 rounded-lg transition font-medium ${
               filter === 'past' ? 'bg-[#990000] text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -88,7 +90,7 @@ const AllEventsPage = () => {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {paginatedEvents.map((event, index) => (
             <motion.div
-              key={index}
+              key={event.title.trim()}
               className="bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -116,6 +118,7 @@ const AllEventsPage = () => {
       {totalPages > 1 && (
         <div className="flex justify-center items-center mt-12 gap-4">
           <button
+            type="button"
             disabled={currentPage === 1}
             onClick={() => setCurrentPage((prev) => prev - 1)}
             className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
@@ -126,6 +129,7 @@ const AllEventsPage = () => {
             Page {currentPage} of {totalPages}
           </span>
           <button
+            type="button"
             disabled={currentPage === totalPages}
             onClick={() => setCurrentPage((prev) => prev + 1)}
             className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"

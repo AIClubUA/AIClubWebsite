@@ -76,7 +76,7 @@ const ClubEvents = () => {
           <>
             <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6">
               {upcoming.slice(0, maxVisible).map((event, index) => (
-                <EventCard key={index} event={event} index={index} />
+                <EventCard key={event.title.trim()} event={event} index={index} />
               ))}
             </div>
             {upcoming.length > maxVisible && (
@@ -99,7 +99,7 @@ const ClubEvents = () => {
           <>
             <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6">
               {past.slice(0, maxVisible).map((event, index) => (
-                <EventCard key={index} event={event} index={index} />
+                <EventCard key={event.title.trim()} event={event} index={index} />
               ))}
             </div>
             {past.length > maxVisible && (
