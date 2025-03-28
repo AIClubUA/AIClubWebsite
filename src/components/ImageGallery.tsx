@@ -1,25 +1,21 @@
-import { useState } from "react";
-import { galleryImages } from "../data/galleryImages";
-import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { useState } from 'react';
+import { galleryImages } from '../data/galleryImages';
+import { motion, AnimatePresence } from 'motion/react';
+import { X } from 'lucide-react';
 
 const ImageGallery = () => {
-  const [selectedImage, setSelectedImage] = useState<
-    null | (typeof galleryImages)[0]
-  >(null);
+  const [selectedImage, setSelectedImage] = useState<null | (typeof galleryImages)[0]>(null);
 
   return (
     <div className="bg-white py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-[#990000] mb-10">
-          Club Moments
-        </h2>
+        <h2 className="text-3xl font-bold text-center text-[#990000] mb-10">Club Moments</h2>
 
         {/* Masonry grid layout */}
         <div className="columns-1 sm:columns-2 md:columns-3 gap-2 space-y-2">
-          {galleryImages.map((img, index) => (
+          {galleryImages.map((img) => (
             <motion.div
-              key={index}
+              key={img.src.split('.')[0]}
               whileHover={{ scale: 1.01 }}
               className="overflow-hidden break-inside-avoid cursor-pointer rounded-xl shadow"
               onClick={() => setSelectedImage(img)}
@@ -71,6 +67,7 @@ const ImageGallery = () => {
               )}
 
               <button
+                type="button"
                 onClick={() => setSelectedImage(null)}
                 className="absolute top-2 right-2 bg-white p-1.5 rounded-full shadow hover:bg-gray-200 transition"
               >

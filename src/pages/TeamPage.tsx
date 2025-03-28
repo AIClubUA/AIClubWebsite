@@ -1,20 +1,15 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { teamMembers, TeamMember } from "../data/teamMembers";
-import { useScrollToTop } from "../hooks/scrollTop";
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { teamMembers, TeamMember } from '../data/teamMembers';
+import { useScrollToTop } from '../hooks/scrollTop';
 
 // Agrupar miembros por tipo de rol
 const groupMap: Record<string, string[]> = {
-  "Executive Team": [
-    "President",
-    "Vice President",
-    "Executive Coordinator",
-    "Investor Relations",
-  ],
-  "Graduate Advisors": ["Graduate Advisor"],
-  "Faculty Advisor": ["Faculty Advisor"],
-  Developers: ["Executive Developer", "Software Developer"],
+  'Executive Team': ['President', 'Vice President', 'Executive Coordinator', 'Investor Relations'],
+  'Graduate Advisors': ['Graduate Advisor'],
+  'Faculty Advisor': ['Faculty Advisor'],
+  Developers: ['Executive Developer', 'Software Developer'],
 };
 
 // Agrupar automáticamente según `groupMap`
@@ -28,8 +23,8 @@ const groupMembers = () => {
 
 const TeamPage = () => {
   useScrollToTop();
-  const fullText = "Meet the AI Club Team";
-  const [typedText, setTypedText] = useState("");
+  const fullText = 'Meet the AI Club Team';
+  const [typedText, setTypedText] = useState('');
   const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
@@ -51,7 +46,7 @@ const TeamPage = () => {
       setCopiedEmail(email);
       setTimeout(() => setCopiedEmail(null), 2000);
     } catch {
-      alert("Clipboard copy not supported");
+      alert('Clipboard copy not supported');
     }
   };
 
@@ -70,9 +65,8 @@ const TeamPage = () => {
           <span className="animate-pulse">|</span>
         </h1>
         <p className="text-gray-600 mt-4 max-w-xl mx-auto">
-          The people behind the vision — combining passion, creativity, and
-          technical skill to shape the future of AI at the University of
-          Alabama.
+          The people behind the vision — combining passion, creativity, and technical skill to shape the future of AI at
+          the University of Alabama.
         </p>
       </div>
 
@@ -85,6 +79,7 @@ const TeamPage = () => {
             <div key={group}>
               {/* Group Header */}
               <button
+                type="button"
                 onClick={() =>
                   setExpanded((prev) => ({
                     ...prev,
@@ -102,14 +97,14 @@ const TeamPage = () => {
                 {isOpen && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
+                    animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.4 }}
                     className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
                   >
                     {members.map((member, index) => (
                       <motion.div
-                        key={index}
+                        key={member.name.trim()}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -122,38 +117,19 @@ const TeamPage = () => {
                         className="bg-gray-50 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center relative overflow-hidden group"
                       >
                         <div className="w-28 h-28 rounded-full overflow-hidden mb-4 border-4 border-[#990000] shadow">
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className="w-full h-full object-cover"
-                          />
+                          <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                         </div>
-                        <h3 className="text-xl font-semibold text-[#990000]">
-                          {member.name}
-                        </h3>
-                        <p className="text-sm text-gray-500 mb-1">
-                          {member.position}
-                        </p>
-                        {member.major && (
-                          <p className="text-sm text-gray-600">
-                            Major: {member.major}
-                          </p>
-                        )}
-                        {member.hometown && (
-                          <p className="text-sm text-gray-600 mb-1">
-                            Hometown: {member.hometown}
-                          </p>
-                        )}
-                        <p className="text-sm text-gray-700 mt-2 mb-3">
-                          {member.bio}
-                        </p>
+                        <h3 className="text-xl font-semibold text-[#990000]">{member.name}</h3>
+                        <p className="text-sm text-gray-500 mb-1">{member.position}</p>
+                        {member.major && <p className="text-sm text-gray-600">Major: {member.major}</p>}
+                        {member.hometown && <p className="text-sm text-gray-600 mb-1">Hometown: {member.hometown}</p>}
+                        <p className="text-sm text-gray-700 mt-2 mb-3">{member.bio}</p>
                         <button
+                          type="button"
                           onClick={() => handleCopyEmail(member.email)}
                           className="text-sm text-blue-600 hover:underline cursor-pointer bg-transparent border-none p-0 z-10"
                         >
-                          {copiedEmail === member.email
-                            ? "Copied!"
-                            : member.email}
+                          {copiedEmail === member.email ? 'Copied!' : member.email}
                         </button>
                         <div className="absolute inset-0 rounded-2xl bg-[#990000] opacity-0 group-hover:opacity-10 transition duration-300 z-0" />
                       </motion.div>

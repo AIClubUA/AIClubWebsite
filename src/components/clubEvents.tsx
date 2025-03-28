@@ -1,6 +1,6 @@
-import { events, EventType } from "../data/clubEvents";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { events, EventType } from '../data/clubEvents';
+import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 const splitEvents = (events: EventType[]) => {
   const now = new Date();
@@ -11,15 +11,12 @@ const splitEvents = (events: EventType[]) => {
 
 const EventCard = ({ event, index }: { event: EventType; index: number }) => {
   // Fix for date offset issue by forcing local time parsing
-  const formattedDate = new Date(event.date + "T00:00:00").toLocaleDateString(
-    "en-US",
-    {
-      weekday: "short",
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    }
-  );
+  const formattedDate = new Date(event.date + 'T00:00:00').toLocaleDateString('en-US', {
+    weekday: 'short',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
 
   return (
     <motion.div
@@ -29,7 +26,7 @@ const EventCard = ({ event, index }: { event: EventType; index: number }) => {
       whileHover={{ scale: 1.05 }}
       transition={{
         duration: 0.4,
-        type: "spring",
+        type: 'spring',
         stiffness: 300,
         damping: 20,
         delay: index * 0.05,
@@ -42,7 +39,7 @@ const EventCard = ({ event, index }: { event: EventType; index: number }) => {
         alt={event.title}
         className="w-full h-48 object-cover"
         animate={{ scale: [1, 1.03, 1] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       />
       <div className="p-6">
         <motion.h3
@@ -55,10 +52,7 @@ const EventCard = ({ event, index }: { event: EventType; index: number }) => {
         <p className="text-sm text-gray-500 mb-2">{formattedDate}</p>
         <p className="text-gray-700 mb-4">{event.description}</p>
         {event.link && (
-          <a
-            href={event.link}
-            className="text-blue-600 hover:underline font-medium"
-          >
+          <a href={event.link} className="text-blue-600 hover:underline font-medium">
             Learn More →
           </a>
         )}
@@ -82,24 +76,19 @@ const ClubEvents = () => {
           <>
             <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6">
               {upcoming.slice(0, maxVisible).map((event, index) => (
-                <EventCard key={index} event={event} index={index} />
+                <EventCard key={event.title.trim()} event={event} index={index} />
               ))}
             </div>
             {upcoming.length > maxVisible && (
               <div className="text-center">
-                <Link
-                  to="/events"
-                  className="text-[#990000] font-medium underline hover:text-red-800 transition"
-                >
+                <Link to="/events" className="text-[#990000] font-medium underline hover:text-red-800 transition">
                   See all upcoming events →
                 </Link>
               </div>
             )}
           </>
         ) : (
-          <p className="text-center text-gray-500 mb-16">
-            No upcoming events right now.
-          </p>
+          <p className="text-center text-gray-500 mb-16">No upcoming events right now.</p>
         )}
 
         {/* Past Events */}
@@ -110,15 +99,12 @@ const ClubEvents = () => {
           <>
             <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-6">
               {past.slice(0, maxVisible).map((event, index) => (
-                <EventCard key={index} event={event} index={index} />
+                <EventCard key={event.title.trim()} event={event} index={index} />
               ))}
             </div>
             {past.length > maxVisible && (
               <div className="text-center">
-                <Link
-                  to="/events"
-                  className="text-[#990000] font-medium underline hover:text-red-800 transition"
-                >
+                <Link to="/events" className="text-[#990000] font-medium underline hover:text-red-800 transition">
                   See all past events →
                 </Link>
               </div>

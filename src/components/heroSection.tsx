@@ -1,8 +1,6 @@
-import { motion } from "framer-motion";
+import { motion } from 'motion/react';
 
-const HIGHLIGHT = (text: string) => (
-  <span className="text-[#990000] font-semibold">{text}</span>
-);
+const HIGHLIGHT = (text: string) => <span className="text-[#990000] font-semibold">{text}</span>;
 
 const HeroSection = () => {
   return (
@@ -13,7 +11,7 @@ const HeroSection = () => {
         alt="AI Background"
         className="absolute inset-0 w-full h-full object-cover object-center"
         animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
       />
 
       {/* Blur only behind text */}
@@ -29,23 +27,15 @@ const HeroSection = () => {
           className="text-center md:text-left"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Welcome to the{" "}
-            <span className="text-[#990000] font-extrabold">
-              University of Alabama
-            </span>{" "}
-            AI Club
+            Welcome to the <span className="text-[#990000] font-extrabold">University of Alabama</span> AI Club
           </h1>
           <p className="mt-6 text-base sm:text-lg text-gray-700">
-            Join us to explore the future of{" "}
-            {HIGHLIGHT("Artificial Intelligence")}! Our club is dedicated to
-            fostering a community of {HIGHLIGHT("AI enthusiasts")}, providing
-            opportunities for {HIGHLIGHT("learning")},{" "}
-            {HIGHLIGHT("collaboration")}, and {HIGHLIGHT("innovation")}. Whether
-            you are a {HIGHLIGHT("beginner")} or an {HIGHLIGHT("expert")}, we
-            have something for everyone. Participate in {HIGHLIGHT("workshops")}
-            ,{HIGHLIGHT("hackathons")}, and {HIGHLIGHT("guest lectures")} to
-            enhance your skills and network with like-minded individuals. Let's
-            shape the future of {HIGHLIGHT("AI")} together!
+            Join us to explore the future of {HIGHLIGHT('Artificial Intelligence')}! Our club is dedicated to fostering
+            a community of {HIGHLIGHT('AI enthusiasts')}, providing opportunities for {HIGHLIGHT('learning')},{' '}
+            {HIGHLIGHT('collaboration')}, and {HIGHLIGHT('innovation')}. Whether you are a {HIGHLIGHT('beginner')} or an{' '}
+            {HIGHLIGHT('expert')}, we have something for everyone. Participate in {HIGHLIGHT('workshops')},
+            {HIGHLIGHT('hackathons')}, and {HIGHLIGHT('guest lectures')} to enhance your skills and network with
+            like-minded individuals. Let's shape the future of {HIGHLIGHT('AI')} together!
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
             <a
@@ -70,11 +60,7 @@ const HeroSection = () => {
           transition={{ duration: 2 }}
           className="flex justify-center md:justify-end"
         >
-          <img
-            src="/Alabama_Logo.png"
-            alt="AI Illustration"
-            className="w-full max-w-md rounded-xl"
-          />
+          <img src="/Alabama_Logo.png" alt="AI Illustration" className="w-full max-w-md rounded-xl" />
         </motion.div>
       </div>
     </section>
