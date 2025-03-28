@@ -2,12 +2,12 @@
 
 export const projects = [
     {
-      title: "EXAMPLE",
+      title: "DIGITS",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet dui ultricies dolor malesuada accumsan.",
       technologies: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
       image: "/AI_hero.jpeg",
-      link: "/projects/digits"
+      link: "digits"
     },
     {
       title: "AI Club Website",

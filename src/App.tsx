@@ -9,7 +9,8 @@ import Footer from "./components/footer";
 import TutorialPage from "./pages/kickoff";
 import ProjectsPage from "./pages/ProjectsPage";
 import PythonIntro from "./pages/events/pythonintro";
-import ProjectDetailPage from './ProjectDetailPage';
+import ProjectDetailPage from "./ProjectDetailPage";
+import Digits from "./pages/projects/digits";
 
 function App() {
   const location = useLocation();
@@ -25,8 +26,12 @@ function App() {
             <Route path="/team" element={<TeamPage />} />
             <Route path="/tutorialPage" element={<TutorialPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
+            <Route
+              path="/projects/:projectId"
+              element={<ProjectDetailPage />}
+            />
             <Route path="/pythonIntro" element={<PythonIntro />} />
+            <Route path="/digits" element={<Digits />} />
           </Routes>
         </AnimatePresence>
       </main>
