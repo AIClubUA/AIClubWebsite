@@ -1,18 +1,13 @@
 export default function TutorialPage() {
   return (
     <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-6 text-center">
-        Using OpenAI API to Answer Questions in an Excel Sheet
-      </h1>
+      <h1 className="text-4xl font-bold mb-6 text-center">Using OpenAI API to Answer Questions in an Excel Sheet</h1>
 
       <h2 className="text-2xl font-semibold mb-4">Prerequisites</h2>
       <ul className="list-disc list-inside mb-6">
         <li>
-          An OpenAI API key (Get one from{" "}
-          <a
-            href="https://platform.openai.com/"
-            className="text-blue-500 underline"
-          >
+          An OpenAI API key (Get one from{' '}
+          <a href="https://platform.openai.com/" className="text-blue-500 underline">
             OpenAI
           </a>
           )
@@ -24,12 +19,9 @@ export default function TutorialPage() {
         <code>pip install openai openpyxl</code>
       </pre>
 
-      <h2 className="text-2xl font-semibold mb-4">
-        Step 1: Set Up Your Excel File
-      </h2>
+      <h2 className="text-2xl font-semibold mb-4">Step 1: Set Up Your Excel File</h2>
       <p className="mb-4">
-        Create an Excel file <code>questions.xlsx</code> with a sheet named
-        &quot;Questions&quot; structured like this:
+        Create an Excel file <code>questions.xlsx</code> with a sheet named &quot;Questions&quot; structured like this:
       </p>
       <table className="table-auto border-collapse border border-gray-300 mb-6 w-full">
         <thead>
@@ -50,10 +42,8 @@ export default function TutorialPage() {
         </tbody>
       </table>
 
-      <h2 className="text-2xl font-semibold mb-4">
-        Step 2: Write the Python Script
-      </h2>
-      <pre className="bg-gray-100 p-4 rounded mb-6">
+      <h2 className="text-2xl font-semibold mb-4">Step 2: Write the Python Script</h2>
+      <pre className="bg-gray-100 p-4 rounded mb-6 overflow-x-scroll">
         <code>{`import openai
 import openpyxl
 
@@ -88,10 +78,7 @@ print("Answers saved to Excel!")`}</code>
       </pre>
 
       <h2 className="text-2xl font-semibold mb-4">Conclusion</h2>
-      <p>
-        You’ve successfully automated answering questions in an Excel sheet
-        using OpenAI’s API!
-      </p>
+      <p>You’ve successfully automated answering questions in an Excel sheet using OpenAI’s API!</p>
     </div>
   );
 }

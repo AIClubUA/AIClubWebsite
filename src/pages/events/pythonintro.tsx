@@ -88,7 +88,7 @@ const Tutorial: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           You can print text to the console using the <code>print</code> function:
         </p>
         <pre className="bg-gray-100 p-4 rounded mb-6">
-          <code>print(&quote;Hello, AI Club!&quote;)</code>
+          <code>print&#40;&quot;Hello, AI Club!&quot;&#41;</code>
         </pre>
         <p className="mb-4">Output:</p>
         <pre className="bg-gray-100 p-4 rounded mb-6">
@@ -133,7 +133,7 @@ const Tutorial: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         <p className="mb-4">
           Conditionals allow you to execute code based on certain conditions. Here&apos;s an example:
         </p>
-        <pre className="bg-gray-100 p-4 rounded mb-6">
+        <pre className="bg-gray-100 p-4 rounded mb-6 overflow-x-scroll">
           <code>{`x = 10\nif x > 5:\n    print("x is greater than 5")\nelse:\n    print("x is 5 or less")`}</code>
         </pre>
         <p className="mb-4">Output:</p>
@@ -145,7 +145,7 @@ const Tutorial: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         <p className="mb-4">
           Lists store multiple items in a single variable. Here&apos;s how you can define and use lists:
         </p>
-        <pre className="bg-gray-100 p-4 rounded mb-6">
+        <pre className="bg-gray-100 p-4 rounded mb-6 overflow-x-scroll">
           <code>{`fruits = ["apple", "banana", "cherry"]\nfor fruit in fruits:\n    print(fruit)`}</code>
         </pre>
         <p className="mb-4">Output:</p>

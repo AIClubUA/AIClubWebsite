@@ -23,10 +23,10 @@ function App() {
             <Route path="/events" element={<AllEventsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/team" element={<TeamPage />} />
-            <Route path="/tutorialPage" element={<TutorialPage />} />
+            <Route path="/tutorialpage" element={<TutorialPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
-            <Route path="/pythonIntro" element={<PythonIntro />} />
+            <Route path="/pythonintro" element={<PythonIntro />} />
           </Routes>
         </AnimatePresence>
       </main>
