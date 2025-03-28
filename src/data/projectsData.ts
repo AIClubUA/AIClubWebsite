@@ -20,4 +20,3 @@ export const projects = [
     
     // Add more here
   ];
-  

@@ -43,7 +43,7 @@ const HeroSection = () => {
             {HIGHLIGHT("collaboration")}, and {HIGHLIGHT("innovation")}. Whether
             you are a {HIGHLIGHT("beginner")} or an {HIGHLIGHT("expert")}, we
             have something for everyone. Participate in {HIGHLIGHT("workshops")}
-            ,{HIGHLIGHT("hackathons")}, and {HIGHLIGHT("guest lectures")} to
+            , {HIGHLIGHT("hackathons")}, and {HIGHLIGHT("guest lectures")} to
             enhance your skills and network with like-minded individuals. Let's
             shape the future of {HIGHLIGHT("AI")} together!
           </p>

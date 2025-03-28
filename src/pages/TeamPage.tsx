@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { teamMembers, TeamMember } from "../data/teamMembers";
 import { useScrollToTop } from "../hooks/scrollTop";
 
-// Agrupar miembros por tipo de rol
+// Group members per rol
 const groupMap: Record<string, string[]> = {
   "Executive Team": [
     "President",
@@ -17,7 +17,6 @@ const groupMap: Record<string, string[]> = {
   Developers: ["Executive Developer", "Software Developer"],
 };
 
-// Agrupar automáticamente según `groupMap`
 const groupMembers = () => {
   const groups: Record<string, TeamMember[]> = {};
   for (const [group, roles] of Object.entries(groupMap)) {

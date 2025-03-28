@@ -11,6 +11,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import PythonIntro from "./pages/events/pythonintro";
 import ProjectDetailPage from "./ProjectDetailPage";
 import Digits from "./pages/projects/digits";
+import Donation from "./pages/DonationPage";
 
 function App() {
   const location = useLocation();
@@ -32,6 +33,7 @@ function App() {
             />
             <Route path="/pythonIntro" element={<PythonIntro />} />
             <Route path="/digits" element={<Digits />} />
+            <Route path="/donation" element={<Donation />} />
           </Routes>
         </AnimatePresence>
       </main>

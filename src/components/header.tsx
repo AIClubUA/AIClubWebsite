@@ -56,6 +56,9 @@ const Header = () => {
             <a href="#contact" className="hover:text-blue-600 transition">
               Contact
             </a>
+            <Link to="/donation" className="hover:text-blue-600 transition">
+              Donations
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
