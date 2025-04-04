@@ -44,7 +44,7 @@ const Footer = () => {
               sdhanegan@crimson.ua.edu
             </a>
             <a
-              href="mailto:fjgutierez@ua.edu"
+              href="mailto:fjgutierrez@ua.edu"
               className="hover:text-[#990000] transition"
             >
               fjgutierez@ua.edu
