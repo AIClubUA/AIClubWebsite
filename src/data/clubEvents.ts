@@ -9,11 +9,11 @@ export type EventType = {
 export const events: EventType[] = [
   //FUTURE
   {
-    title: 'AI Ethics Panel',
-    date: '2025-04-10',
-    description: 'Discussion on the ethical implications of AI.',
-    image: '/AI_hero.jpeg',
-    link: '#',
+    title: 'Post-Microsoft Event meeting and Word Vectorization',
+    date: '2025-04-17',
+    description: 'Discussion on the Microsoft event and discussion on Word Vectorization.',
+    image: '/wordvector.png',
+    link: '4-17-25',
   },
   {
     title: 'ML Workshop',
@@ -54,6 +54,7 @@ export const events: EventType[] = [
     image: '/AI_hero.jpeg',
     link: 'tutorialpage',
   },
+  
 
   // Add more
 ];
