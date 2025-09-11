@@ -9,17 +9,17 @@ export type TeamMember = {
   };
   
   export const teamMembers: TeamMember[] = [
-    {
-      name: "Spence Hannegan",
+  {
+      name: "Julian Garcia",
       position: "President",
-      major: "Mathematics",
-      hometown: "Meridian, MS",
-      image: "./team/spence.webp",
-      bio: "Spence is passionate about AI research and leads projects in machine learning.",
-      email: "sdhanegan@crimson.ua.edu",
+      major: "Aerospace Eng",
+      hometown: "Wichita Falls, TX",
+      image: "./team/julian.webp",
+      bio: "Julian is eager to merge aerospace & AI for tech innovation. Excited to grow the club, tackle projects, and explore AI’s impact on aerospace.",
+      email: "jrgarcia3@crimson.ua.edu",
     },
     {
-      name: "Josh Hargrave",
+      name: "Ryan Elliot",
       position: "Vice President",
       major: "Aerospace Eng",
       hometown: "Pearland, TX",
@@ -28,10 +28,10 @@ export type TeamMember = {
       email: "jmhargrave@crimson.ua.edu",
     },
     {
-      name: "Julian Garcia",
-      position: "Executive Coordinator",
+      name: "Connor Barbaccia",
+      position: "Vice President Development",
       major: "Aerospace Eng",
-      hometown: "Wichita Falls, TX",
+      hometown: "Naperville, IL",
       image: "./team/julian.webp",
       bio: "Julian is eager to merge aerospace & AI for tech innovation. Excited to grow the club, tackle projects, and explore AI’s impact on aerospace.",
       email: "jrgarcia3@crimson.ua.edu",
